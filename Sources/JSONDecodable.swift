@@ -43,12 +43,8 @@ extension Double: JSONDecodable {
 extension Int: JSONDecodable {
 
     private init?(exactly string: String) {
-        #if swift(>=3.2)
         let characters = string
-        #else
-        let characters = string.characters
-        #endif
-
+        
         if let int = Int(string) {
             self = int
         } else if let double = Double(string),

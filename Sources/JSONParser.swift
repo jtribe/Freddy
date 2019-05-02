@@ -443,11 +443,7 @@ public struct JSONParser {
         var parser = parser
         var value = 0
         
-        #if swift(>=3.2)
         let noOverflow = false
-        #else
-        let noOverflow = ArithmeticOverflow.none
-        #endif
 
         // This would be more natural as `while true { ... }` with a meaningful .Done case,
         // but that causes compile time explosion in Swift 2.2. :-|
