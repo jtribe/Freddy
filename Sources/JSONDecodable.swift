@@ -67,6 +67,8 @@ extension Int: JSONDecodable {
             self = Int(double)
         } else if case let .int(int) = json {
             self = int
+        } else if case let .bool(bool) = json {
+            self = bool ? 1 : 0
         } else if case let .string(string) = json, let int = Int(exactly: string) {
             self = int
         } else {
